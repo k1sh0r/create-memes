@@ -8,16 +8,16 @@ def hot_meme():
     return getpostfromreddit.downloadMeme("hot",request.args.get('count', default = 1, type = int))
 
 @app.route('/new')
-def dynamic_page():
+def new_meme():
     print(request.args.get('count', default = 1, type = int))
     return getpostfromreddit.downloadMeme("new",request.args.get('count', default = 1, type = int))
 
 @app.route('/zenhot')
-def hot_meme():
+def zenhot_meme():
     return getpostfromreddit.downloadZenMeme("hot",request.args.get('count', default = 1, type = int))
 
 @app.route('/zennew')
-def dynamic_page():
+def zennew_meme():
     print(request.args.get('count', default = 1, type = int))
     return getpostfromreddit.downloadZenMeme("new",request.args.get('count', default = 1, type = int))
 
