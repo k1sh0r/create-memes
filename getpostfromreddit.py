@@ -14,12 +14,15 @@ def downloadMeme(category, count = 1):
         hot_posts = reddit.subreddit('css_irl+ProgrammerHumor+programming+programming_memes+programmingmemes+programminghorror').new()
 
     for post in hot_posts:
-        if(post.post_hint == 'image'):
-            count = count -1
-            if count <= 1:
-                memeurl = post.url
-                print('meme available')
-                break
+        try:
+            if(post.post_hint and post.post_hint == 'image'):
+                count = count -1
+                if count <= 1:
+                    memeurl = post.url
+                    print('meme available')
+                    break
+        except:
+            print("this post had a error")
 
     # for post in hot_posts:
     #     print(post.url + " " + post.post_hint)
@@ -63,12 +66,15 @@ def downloadZenMeme(category, count = 1):
         hot_posts = reddit.subreddit('css_irl+ProgrammerHumor+programming+programming_memes+programmingmemes+programminghorror').new()
 
     for post in hot_posts:
-        if(post.post_hint == 'image'):
-            count = count -1
-            if count <= 1:
-                memeurl = post.url
-                print('meme available')
-                break
+        try:
+            if(post.post_hint == 'image'):
+                count = count -1
+                if count <= 1:
+                    memeurl = post.url
+                    print('meme available')
+                    break
+        except:
+            print("error in zen post")
 
     # for post in hot_posts:
     #     print(post.url + " " + post.post_hint)
