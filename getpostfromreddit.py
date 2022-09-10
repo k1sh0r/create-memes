@@ -109,5 +109,7 @@ def downloadZenMeme(category, count = 1):
     memebg.save(img_io, 'JPEG', quality=70)
     img_io.seek(0)
     print( base64.b64encode(img_io.getvalue()).decode())
-    return send_file('<img src="data:image/png;base64",' + base64.b64encode(img_io.getvalue()).decode() + '"/> <a href="/"><form action="/"><input class="btn" type="button" value="HOME" /></form></a>')
+    return send_file(img_io, mimetype='image/jpeg')
+
+    # return send_file('<img src="data:image/png;base64",' + base64.b64encode(img_io.getvalue()).decode() + '"/> <a href="/"><form action="/"><input class="btn" type="button" value="HOME" /></form></a>')
     # return memebg

@@ -17,7 +17,7 @@ def zenhot_meme():
     return getpostfromreddit.downloadZenMeme("hot",request.args.get('count', default = 1, type = int))
 @app.route('/zennew')
 def zennew_meme():
-    print(request.args.get('count', default = 1, type = int))
+    # print(request.args.get('count', default = 1, type = int))
     return getpostfromreddit.downloadZenMeme("new",request.args.get('count', default = 1, type = int))
 
 if __name__ == '__main__':
